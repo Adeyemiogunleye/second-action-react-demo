@@ -1,4 +1,4 @@
-name: Test Project
+name: Build Project
 on: push
 jobs:
     test:
@@ -16,6 +16,7 @@ jobs:
             - name: run tests
               run: npm test
     Deploy:
+        needs: test
         name: Deploy Application
         runs-on: ubuntu-latest
         steps:
